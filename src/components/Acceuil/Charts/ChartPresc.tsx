@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar:React.FC = () => {
+const ChartPresc:React.FC = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Navbar:React.FC = () => {
   )
 }
 
-export default Navbar
+export default ChartPresc

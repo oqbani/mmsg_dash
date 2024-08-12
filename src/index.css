@@ -1,0 +1,714 @@
+:root {
+  /* --cl-red: rgb(206, 27, 27); */
+  --cl-red: rgb(221, 66, 66);
+  --cl-white: white;
+  --cl-grey: rgb(212, 212, 212);
+  /* --cl-blk: rgba(18, 0, 48, 0.815); */
+
+  --cl-blk: rgb(19, 0, 88);
+  --cl-login: rgb(19, 0, 88);
+  --bg-slider: rgba(0, 0, 0, 0.432);
+  --bg-slider: rgba(0, 0, 0, 0.432);
+  --bg-infos: rgba(0, 0, 0, 0.493);
+  --bg-modal: rgba(0, 0, 0, 0.651);
+  --bg-input: rgb(241, 241, 241);
+  --bg-input-dash: rgb(248, 248, 248);
+}
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+body {
+  font-weight: 600;
+  position: relative;
+  text-align: justify;
+}
+* {
+  list-style: none;
+}
+.logout-button {
+  background-color: #ff4d4d; /* Rouge clair */
+  color: white;
+  border: none;
+  padding: .5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-button:hover {
+  background-color: #e60000; /* Rouge plus foncé au survol */
+}
+
+.filter {
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+.filter a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cl-blk);
+  text-decoration: none;
+}
+.filter .arrow {
+  font-size: 1.5rem;
+}
+/* navbar */
+.navbar {
+  width: 100%;
+  padding: 0 !important;
+}
+.navbar-brand {
+  z-index: 1;
+}
+.navbar .nav-item a {
+  color: var(--cl-white) !important;
+  font-size: 1.5rem;
+  text-decoration: none;
+  position: relative;
+}
+.navbar .nav-item a span {
+  background-color: var(--cl-red);
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0 0.3rem;
+  border-radius: 50%;
+  position: absolute;
+  right: -0.5rem;
+}
+/* Active navItem */
+.active {
+  background-color: var(--cl-red);
+  color: var(--cl-blk);
+  border-radius: 0.6rem;
+}
+.subcategory {
+  color: var(--cl-red);
+}
+/* Navbar Top */
+.menu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 7rem;
+  padding: 0 2rem;
+  background-color: var(--cl-blk);
+}
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 13rem;
+  margin-top: 3.5rem;
+  height: 93vh;
+  border-top: none;
+  background-color: var(--cl-blk);
+  box-shadow: rgba(95, 2, 172, 0.24) 0px 3px 8px;
+  padding: 0.5rem;
+}
+.sidenav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--cl-white);
+}
+.sidenav .icon {
+  position: relative;
+}
+.sidenav .circle {
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--cl-red);
+  border-radius: 50%;
+  left: 1.6rem;
+}
+.sidenav span {
+  font-size: 1rem;
+}
+.sidenav li,
+.sidenav a {
+  transition: 0.5s;
+}
+.sidenav li:hover {
+  color: var(--cl-blk);
+  background-color: #cececea6;
+  border-radius: 0.6rem;
+}
+
+/* Home page */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.home .cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.home .cards .card {
+  width: 12rem;
+  height: 12rem;
+  color: var(--cl-white);
+  background-color: var(--cl-blk);
+  border: 0.1rem solid var(--cl-blk);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.4s;
+  z-index: 1;
+}
+.home .cards .card:hover {
+  border: 0.1rem solid var(--cl-blk);
+  color: var(--cl-blk);
+}
+
+.home .cards .card::before {
+  background-color: var(--cl-white);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  transition: 0.6s;
+  border-radius: 0.2rem;
+}
+.home .cards .card:hover::before {
+  width: 100%;
+}
+
+/* Contact */
+input,
+textarea {
+  border: 0.1rem solid var(--bg-slider) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.Blog,
+.Medecins,
+.Candidature,
+.Presc,
+.rdv,
+.coordonnees,
+.contact {
+  margin-left: 13rem;
+  padding: 0.5rem;
+  margin-top: 5rem;
+  color: var(--cl-blk);
+}
+.Blog-content,
+.Medecins-content,
+.Candidature-content,
+.Presc-content,
+.contact-content,
+.rdv-content,
+.coordonnees-content {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem 0.5rem;
+  border-radius: 0.6rem;
+}
+.Blog td,
+.Blog th,
+.Medecins td,
+.Medecins th,
+.Candidature td,
+.Candidature th,
+.contact td,
+.contact th,
+.rdv td,
+.rdv th,
+.Presc td,
+.Presc th {
+  color: var(--cl-blk) !important;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 2rem;
+  border: 0.1rem solid var(--cl-grey);
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.6rem;
+}
+.search-input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 0;
+}
+.search-input input {
+  width: 15rem;
+  background-color: var(--cl-white);
+  border-radius: 0.2rem;
+  position: relative;
+  height: 2rem;
+  padding: 0 0.5rem;
+  box-shadow: rgb(207, 161, 245) 0px 1px 2px;
+}
+.search-input .search-input-icon {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  transform: translate(-50%, 50%);
+  font-size: 1rem;
+}
+.search select {
+  width: 5rem;
+  height: 2rem;
+  background-color: var(--cl-white);
+  border-radius: 0.2rem;
+  font-weight: 700;
+  border: none;
+  border-bottom: 0.1rem solid var(--cl-blk);
+  outline: none;
+  cursor: pointer;
+  box-shadow: rgb(207, 161, 245) 0px 1px 2px;
+}
+.search option {
+  cursor: pointer;
+}
+.search-icon {
+  min-height: 3rem;
+  min-width: 3rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 0.1rem solid var(--cl-blk);
+  color: var(--cl-blk);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  padding: 0.4rem;
+  background-color: var(--cl-blk);
+}
+.search-icon input {
+  border: none;
+  outline: none;
+  border-bottom: 0.1rem solid var(--cl-blk);
+}
+.filter-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--cl-white);
+}
+
+.Btn-add-container {
+  border: 0.1rem solid var(--cl-grey);
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  width: 15rem;
+  margin-bottom: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+.section-blog,
+.section-medecins {
+  margin-top: 8rem;
+}
+.add-medecins {
+  color: var(--cl-white);
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  background-color: var(--cl-blk);
+  width: 14rem;
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.addmedecin-icon {
+  font-size: 1.5rem;
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.active-page {
+  width: 2rem;
+  height: 2rem;
+  border: 0.16rem solid var(--cl-blk);
+  color: var(--cl-blk);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+.previous-link,
+.next-link {
+  text-decoration: none;
+  color: var(--cl-blk);
+  font-weight: 700;
+}
+
+/* COORDONNEES */
+.coordonnees label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.coordonnees form {
+  max-width: 30rem;
+}
+.coordonnees input {
+  border-radius: 0.4rem;
+  width: 30rem;
+  outline: none;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid var(--bg-slider) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-weight: 600;
+}
+.coordonnees form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--cl-blk);
+  font-weight: 600;
+}
+.coordonnees form div div {
+  display: flex;
+  flex-direction: column;
+}
+.coordonnees button {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 0.4rem;
+  background-color: var(--cl-blk);
+  color: var(--cl-white);
+  font-weight: 600;
+  border: none;
+}
+
+/* INPUT */
+.Medecins form div div {
+  display: flex;
+  flex-direction: column;
+}
+.Blog .search input {
+  width: 15rem;
+}
+.Blog form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.Blog .form-div {
+  display: flex;
+  gap: 2rem;
+}
+.Blog .form-div div {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  font-weight: 700;
+}
+.Blog input,
+.Blog textarea {
+  width: 30rem;
+  padding: 0 1.5rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid var(--bg-slider) !important;
+}
+input {
+  width: 22rem;
+  height: 3rem;
+  padding: 0 1.5rem;
+  border-radius: 0.2rem;
+  border: 0.1rem solid var(--bg-slider) !important;
+}
+select {
+  width: 22rem;
+  height: 3rem;
+  border-radius: 0.2rem;
+  padding: 0 1.5rem;
+  border: 0.1rem solid var(--bg-slider) !important;
+  font-weight: 700;
+}
+textarea {
+  width: 22rem;
+  height: 10rem;
+}
+.Btn-add {
+  width: 12rem;
+  height: 3rem;
+  border: 0.1rem solid var(--cl-blk);
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  margin: 2rem 0;
+  color: var(--cl-white);
+  background-color: var(--cl-blk);
+  font-weight: 600;
+}
+.error {
+  color: var(--cl-red);
+  font-weight: 700;
+}
+
+/* Login */
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  background-color: var(--cl-login);
+  background-color: var(--cl-login);
+}
+
+.login-content {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 0.4rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--cl-white);
+  gap: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.login-content table {
+  width: 100%;
+}
+.login-content tr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login-content h2 {
+  color: var(--cl-blk);
+  text-align: center;
+}
+@media (max-width: 868px) {
+  .sidenav {
+    width: 3rem;
+    height: 100vh;
+    padding: 0;
+  }
+  .sidenav a {
+    font-size: 1rem;
+  }
+  .sidenav .circle {
+    position: absolute;
+    left: 1rem;
+  }
+  .sidenav span {
+    font-size: 1rem;
+    display: none;
+  }
+  .Blog th,
+  .Blog td,
+  .Medecins th,
+  .Medecins td,
+  .Candidature th,
+  .Candidature td,
+  .contact th,
+  .contact td,
+  .rdv th,
+  .rdv td,
+  .Presc th,
+  .Presc td {
+    font-size: 0.6rem;
+  }
+  .Blog,
+  .Medecins,
+  .Candidature,
+  .Presc,
+  .rdv,
+  .coordonnees,
+  .contact {
+    margin-left: 3rem;
+    padding: 0.5rem;
+  }
+  /* Blog */
+
+  .Blog .form-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .Blog input,
+  .Blog textarea {
+    width: 22rem;
+  }
+}
+@media (max-width: 768px) {
+  .sidenav {
+    width: 3rem;
+    height: 100vh;
+    padding: 0;
+  }
+  .sidenav a {
+    font-size: 1rem;
+  }
+  .sidenav .circle {
+    position: absolute;
+    left: 1rem;
+  }
+  .sidenav span {
+    font-size: 1rem;
+    display: none;
+  }
+  .Medecins,
+  .Candidature,
+  .Presc,
+  .rdv,
+  .coordonnees,
+  .contact {
+    margin-left: 3rem;
+    padding: 0.5rem;
+  }
+  .Blog th,
+  .Blog td,
+  .Medecins th,
+  .Medecins td,
+  .Candidature th,
+  .Candidature td,
+  .contact th,
+  .contact td,
+  .rdv th,
+  .rdv td,
+  .Presc th,
+  .Presc td {
+    font-size: 0.4rem;
+  }
+  .Blog-content .filter,
+  .Medecins-content .filter,
+  .Candidature-content .filter,
+  .Presc-content .filter,
+  .contact-content .filter,
+  .rdv-content .filter,
+  .coordonnees-content .filter {
+    font-size: 0.8rem;
+  }
+  .Blog-content h5,
+  .Medecins-content h5,
+  .Candidature-content h5,
+  .Presc-content h5,
+  .contact-content h5,
+  .rdv-content h5,
+  .contact-content h5 {
+    font-size: 0.8rem;
+  }
+  .search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-height: 1.5rem;
+  }
+
+  .filter-icon {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .search h4 {
+    font-size: 0.8rem;
+  }
+  .search-icon {
+    display: flex;
+    align-items: start;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+  }
+  .coordonnees input {
+    border-radius: 0.4rem;
+    width: 19.7rem;
+    outline: none;
+    height: 3rem;
+    padding: 0 1.5rem;
+    border-radius: 0.2rem;
+    border: 0.1rem solid var(--bg-slider) !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  /* Login */
+  .login-content {
+    width: 22rem;
+    height: 30rem;
+  }
+  .login-content input {
+    width: 18rem;
+  }
+
+  /* Blog */
+
+  .Blog input,
+  .Blog textarea {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .sidenav {
+    width: 2.3rem;
+  }
+  .Blog,
+  .Medecins,
+  .Candidature,
+  .Presc,
+  .rdv,
+  .contact,
+  .coordonnees {
+    padding: 0;
+  }
+  .Blog-content,
+  .Medecins-content,
+  .Candidature-content,
+  .Presc-content,
+  .contact-content,
+  .rdv-content,
+  .contact-content {
+    padding: 0.5rem;
+  }
+  .search-input input {
+    width: 13rem;
+  }
+
+  /* COORDONNEES */
+
+  .coordonnees input {
+    border-radius: 0.4rem;
+    width: 18rem;
+  }
+  /* Blog */
+
+  .Blog input,
+  .Blog textarea {
+    width: 18rem;
+  }
+}
